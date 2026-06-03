@@ -33,8 +33,8 @@ function Index() {
       <Stats />
       <PriceTransparency />
       <Benefits />
-      <TokenSection />
       <GaseroSection />
+      <TokenSection />
       <HowItWorks />
       <CTA />
       <Footer />
