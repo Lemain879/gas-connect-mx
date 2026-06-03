@@ -31,6 +31,7 @@ function Index() {
       <Nav />
       <Hero />
       <Stats />
+      <PriceTransparency />
       <Benefits />
       <GaseroSection />
       <HowItWorks />
