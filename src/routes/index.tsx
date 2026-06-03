@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Flame, Shield, Zap, Gauge, Coins, MapPin, Building2, Download, ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
+import { Flame, Shield, Zap, Gauge, Coins, MapPin, Building2, Download, ArrowRight, CheckCircle2, Sparkles, Scale } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
