@@ -13,7 +13,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "TOKEN GAS MX — Carga seguro, exacto, rápido y a buen precio" },
-      { name: "description", content: "Ecosistema Web 3.0 para el gas LP en México. Únete como gasero y accede a miles de restaurantes, edificios y zonas habitacionales de la Zona Metropolitana." },
+      { name: "description", content: "Ecosistema Web 3.0 para el Gas LP en México. Únete como gasero y accede a miles de restaurantes, edificios y zonas habitacionales de la Zona Metropolitana." },
       { property: "og:title", content: "TOKEN GAS MX — Web 3.0 del Gas LP" },
       { property: "og:description", content: "Carga seguro, exacto, rápido y a buen precio. Token utilitario que conecta gaseros con miles de clientes." },
       { property: "og:type", content: "website" },
@@ -88,7 +88,7 @@ function Hero() {
 
         <p className="mt-8 max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground leading-relaxed">
           TOKEN GAS MX es el primer token utilitario que conecta a usuarios y gaseros en una red descentralizada,
-          transparente y justa para el consumo de gas LP.
+          transparente y justa para el consumo de Gas LP.
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -145,7 +145,7 @@ function PriceTransparency() {
           Precios justos y reales del mercado
         </h3>
         <p className="mt-3 text-muted-foreground text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-          Todos los precios de gas LP dentro de TOKEN GAS MX se ajustan a la regulación vigente del mercado,
+          Todos los precios de Gas LP dentro de TOKEN GAS MX se ajustan a la regulación vigente del mercado,
           conforme a los lineamientos oficiales de la <strong className="text-foreground">CRE</strong> y la <strong className="text-foreground">SENER</strong>.
           Sin intermediarios ocultos, sin sobreprecios: pagas lo que marca el litro oficial.
         </p>
@@ -328,7 +328,7 @@ function CTA() {
         </div>
         <Flame className="h-12 w-12 mx-auto text-primary animate-flicker" />
         <h2 className="mt-6 font-display text-4xl md:text-5xl font-bold">
-          El gas LP entra en la <span className="text-gradient-flame">era Web 3.0</span>
+          El Gas LP entra en la <span className="text-gradient-flame">era Web 3.0</span>
         </h2>
         <p className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto">
           Descarga la app, únete a la red y empieza a cargar seguro, exacto, rápido y a buen precio.
