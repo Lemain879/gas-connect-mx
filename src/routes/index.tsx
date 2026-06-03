@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Flame, Shield, Zap, Gauge, Coins, MapPin, Building2, Download, ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
+import { Flame, Shield, Zap, Gauge, Coins, MapPin, Building2, Download, ArrowRight, CheckCircle2, Sparkles, Scale } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -31,6 +31,7 @@ function Index() {
       <Nav />
       <Hero />
       <Stats />
+      <PriceTransparency />
       <Benefits />
       <GaseroSection />
       <HowItWorks />
@@ -124,6 +125,41 @@ function Stats() {
             <div className="mt-2 text-sm text-muted-foreground">{s.label}</div>
           </div>
         ))}
+      </div>
+    </section>
+  );
+}
+
+function PriceTransparency() {
+  return (
+    <section className="px-6 py-10">
+      <div className="mx-auto max-w-4xl glass-card rounded-2xl p-8 md:p-10 text-center relative overflow-hidden">
+        <div className="absolute inset-0 -z-10 opacity-20">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-48 w-48 rounded-full bg-primary/40 blur-3xl" />
+        </div>
+        <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-xs font-medium text-accent backdrop-blur">
+          <Scale className="h-3.5 w-3.5" />
+          Transparencia de precios
+        </div>
+        <h3 className="mt-5 font-display text-2xl md:text-3xl font-bold">
+          Precios justos y reales del mercado
+        </h3>
+        <p className="mt-3 text-muted-foreground text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+          Todos los precios de gas LP dentro de TOKEN GAS MX se ajustan a la regulación vigente del mercado,
+          conforme a los lineamientos oficiales de la <strong className="text-foreground">CRE</strong> y la <strong className="text-foreground">SENER</strong>.
+          Sin intermediarios ocultos, sin sobreprecios: pagas lo que marca el litro oficial.
+        </p>
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+            <Shield className="h-3.5 w-3.5" /> Regulación CRE
+          </span>
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+            <CheckCircle2 className="h-3.5 w-3.5" /> Precio por litro oficial
+          </span>
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+            <Flame className="h-3.5 w-3.5" /> Sin sobreprecios
+          </span>
+        </div>
       </div>
     </section>
   );
