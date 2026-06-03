@@ -285,7 +285,7 @@ function GaseroSection() {
           </p>
 
           <ul className="mt-6 space-y-3">
-            {["Clientes verificados y recurrentes", "Pagos seguros en pesos o TGMX", "Rutas optimizadas, menos tiempo muerto", "Reputación on-chain que te respalda"].map((t) => (
+            {["Clientes verificados y recurrentes", "Paga con pesos, USDC y diversas monedas digitales verificables por TOKEN MX", "Rutas optimizadas, menos tiempo muerto", "Reputación on-chain que te respalda"].map((t) => (
               <li key={t} className="flex items-start gap-3 text-muted-foreground">
                 <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                 <span>{t}</span>
@@ -334,7 +334,7 @@ function HowItWorks() {
     { n: "01", t: "Descarga la app", d: "Disponible para usuarios y gaseros, vinculada a tu wallet Web 3.0." },
     { n: "02", t: "Solicita o atiende", d: "Pide tu carga o recibe solicitudes verificadas en tu zona." },
     { n: "03", t: "Carga registrada en blockchain", d: "Litros, precio y ubicación quedan inmutables. Confianza real." },
-    { n: "04", t: "Gana TGMX", d: "Cada transacción genera recompensas en el token TOKEN GAS MX." },
+    { n: "04", t: "Desbloquea más rutas y gana", d: "Mientras más abasteces como gasero, más zonas y pedidos exclusivos desbloqueas. Como usuario, recibe bonos y cashback inmediato en cada compra dentro del ecosistema." },
   ];
   return (
     <section id="como-funciona" className="px-6 py-24">
