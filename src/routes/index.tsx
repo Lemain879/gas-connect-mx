@@ -285,7 +285,7 @@ function GaseroSection() {
           </p>
 
           <ul className="mt-6 space-y-3">
-            {["Clientes verificados y recurrentes", "Pagos seguros en pesos o TGMX", "Rutas optimizadas, menos tiempo muerto", "Reputación on-chain que te respalda"].map((t) => (
+            {["Clientes verificados y recurrentes", "Paga con pesos, USDC y diversas monedas digitales verificables por TOKEN MX", "Rutas optimizadas, menos tiempo muerto", "Reputación on-chain que te respalda"].map((t) => (
               <li key={t} className="flex items-start gap-3 text-muted-foreground">
                 <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                 <span>{t}</span>
