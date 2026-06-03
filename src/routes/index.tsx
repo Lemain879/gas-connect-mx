@@ -204,6 +204,43 @@ function Benefits() {
   );
 }
 
+function TokenSection() {
+  const features = [
+    { icon: Zap, title: "Pagos instantáneos", desc: "Entre gaseros y clientes sin intermediarios. Transferencias directas en segundos." },
+    { icon: Coins, title: "Programa de lealtad y cashback", desc: "Gana tokens TGMX por cada compra y canjéalos por descuentos o staking." },
+    { icon: Landmark, title: "Governance democrática", desc: "Vota propuestas y decide el rumbo del ecosistema. Un token, un voz." },
+    { icon: Wallet, title: "Integración con wallets populares", desc: "Conecta tu MetaMask, Trust Wallet o cualquier wallet compatible con EVM." },
+    { icon: Eye, title: "Auditoría on-chain", desc: "Cada entrega queda registrada en blockchain. Rastreable, verificable e inmutable." },
+  ];
+  return (
+    <section id="token" className="px-6 py-24">
+      <div className="mx-auto max-w-6xl">
+        <div className="text-center max-w-2xl mx-auto">
+          <div className="text-sm font-semibold text-primary uppercase tracking-widest">El token</div>
+          <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold">
+            El token que <span className="text-gradient-flame">mueve al sector</span>
+          </h2>
+          <p className="mt-4 text-muted-foreground text-lg leading-relaxed">
+            TOKEN GAS MX es un token de utilidad construido sobre blockchain, diseñado específicamente para la industria del Gas LP en México. Transparencia total, economía circular y valor real para toda la cadena.
+          </p>
+        </div>
+
+        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {features.map(({ icon: Icon, title, desc }) => (
+            <div key={title} className="group glass-card rounded-2xl p-7 hover:border-primary/50 transition">
+              <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/30 group-hover:glow-flame transition">
+                <Icon className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="mt-5 font-display text-xl font-semibold">{title}</h3>
+              <p className="mt-2 text-muted-foreground leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function GaseroSection() {
   const [form, setForm] = useState({ nombre: "", telefono: "", tipo: "pipa", zona: "" });
   const [loading, setLoading] = useState(false);
