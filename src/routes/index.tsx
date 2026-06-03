@@ -334,7 +334,7 @@ function HowItWorks() {
     { n: "01", t: "Descarga la app", d: "Disponible para usuarios y gaseros, vinculada a tu wallet Web 3.0." },
     { n: "02", t: "Solicita o atiende", d: "Pide tu carga o recibe solicitudes verificadas en tu zona." },
     { n: "03", t: "Carga registrada en blockchain", d: "Litros, precio y ubicación quedan inmutables. Confianza real." },
-    { n: "04", t: "Gana TGMX", d: "Cada transacción genera recompensas en el token TOKEN GAS MX." },
+    { n: "04", t: "Desbloquea más rutas y gana", d: "Mientras más abasteces como gasero, más zonas y pedidos exclusivos desbloqueas. Como usuario, recibe bonos y cashback inmediato en cada compra dentro del ecosistema." },
   ];
   return (
     <section id="como-funciona" className="px-6 py-24">
