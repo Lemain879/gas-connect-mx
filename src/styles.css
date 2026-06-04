@@ -82,25 +82,26 @@
     color: var(--color-foreground);
     font-family: var(--font-body);
     background-image:
-      radial-gradient(ellipse 80% 50% at 50% -20%, oklch(0.30 0.15 220 / 0.35), transparent),
-      radial-gradient(ellipse 60% 40% at 80% 100%, oklch(0.30 0.15 195 / 0.20), transparent);
+      radial-gradient(ellipse 80% 50% at 50% -20%, oklch(0.45 0.18 80 / 0.30), transparent),
+      radial-gradient(ellipse 60% 40% at 80% 100%, oklch(0.35 0.18 150 / 0.25), transparent),
+      radial-gradient(ellipse 50% 35% at 10% 60%, oklch(0.40 0.20 30 / 0.18), transparent);
     background-attachment: fixed;
   }
   h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
 }
 
 @utility text-gradient-flame {
-  background: var(--gradient-flame);
+  background: var(--gradient-metal);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
 @utility glass-card {
-  background: linear-gradient(180deg, oklch(0.22 0.04 240 / 0.6), oklch(0.16 0.03 240 / 0.4));
+  background: linear-gradient(180deg, oklch(0.22 0.05 150 / 0.55), oklch(0.15 0.03 155 / 0.45));
   backdrop-filter: blur(20px);
-  border: 1px solid oklch(0.40 0.08 220 / 0.25);
-  box-shadow: var(--shadow-card);
+  border: 1px solid oklch(0.55 0.14 85 / 0.28);
+  box-shadow: var(--shadow-card), inset 0 1px 0 oklch(0.85 0.12 85 / 0.08);
 }
 
 @utility glow-flame {
