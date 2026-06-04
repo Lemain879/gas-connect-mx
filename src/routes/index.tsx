@@ -173,7 +173,7 @@ function Benefits() {
     { icon: Zap, title: "Carga rápida", desc: "Solicita gas desde la app y recibe a tu gasero más cercano en minutos." },
     { icon: Coins, title: "Mejor precio", desc: "Sin intermediarios. El token reduce comisiones y devuelve valor a la comunidad." },
     { icon: MapPin, title: "Geolocalización", desc: "Encuentra al gasero más cercano con rutas en tiempo real." },
-    { icon: Flame, title: "Recompensas en TGMX", desc: "Gana tokens por cada carga y úsalos para descuentos o staking." },
+    { icon: Wallet, title: "Bonos en USDC con Kompensa", desc: "Por cada carga, TOKEN GAS MX te entrega bonos en USDC que puedes gastar en los negocios registrados dentro de la App Kompensa." },
   ];
   return (
     <section id="beneficios" className="px-6 py-24">
@@ -285,7 +285,7 @@ function GaseroSection() {
           </p>
 
           <ul className="mt-6 space-y-3">
-            {["Clientes verificados y recurrentes", "Paga con pesos, USDC y diversas monedas digitales verificables por TOKEN MX", "Rutas optimizadas, menos tiempo muerto", "Reputación on-chain que te respalda"].map((t) => (
+            {["Clientes verificados y recurrentes", "Paga con pesos, USDC y diversas monedas digitales verificables por TOKEN MX", "Rutas optimizadas, menos tiempo muerto", "Reputación on-chain que te respalda", "Acceso exclusivo a clientes de alto volumen: al recibir altas recomendaciones en la App, desbloqueas pedidos premium de restaurantes, edificios y zonas habitacionales que consumen grandes volúmenes de Gas LP."].map((t) => (
               <li key={t} className="flex items-start gap-3 text-muted-foreground">
                 <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                 <span>{t}</span>
