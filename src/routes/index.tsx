@@ -207,7 +207,7 @@ function Benefits() {
 function TokenSection() {
   const features = [
     { icon: Zap, title: "Pagos instantáneos", desc: "Entre gaseros y clientes sin intermediarios. Transferencias directas en segundos." },
-    { icon: Coins, title: "Programa de lealtad y cashback", desc: "Gana tokens TGMX por cada compra y canjéalos por descuentos o staking." },
+    { icon: Coins, title: "Programa de lealtad", desc: "Gana recompensas por cada compra y canjéalos por descuentos o staking." },
     { icon: Landmark, title: "Governance democrática", desc: "Vota propuestas y decide el rumbo del ecosistema. Un token, un voz." },
     { icon: Wallet, title: "Integración con wallets populares", desc: "Conecta tu MetaMask, Trust Wallet o cualquier wallet compatible con EVM." },
     { icon: Eye, title: "Auditoría on-chain", desc: "Cada entrega queda registrada en blockchain. Rastreable, verificable e inmutable." },
@@ -335,7 +335,7 @@ function HowItWorks() {
     { n: "02", t: "Solicita o atiende", d: "Pide tu carga o recibe solicitudes verificadas en tu zona." },
     { n: "03", t: "Carga registrada en blockchain", d: "Litros, precio y ubicación quedan inmutables. Confianza real." },
     { n: "04", t: "Desbloquea más rutas y gana", d: "Mientras más abasteces como gasero, más zonas y pedidos exclusivos desbloqueas." },
-    { n: "05", t: "Bonos y cashback", d: "Como usuario, recibe bonos y cashback inmediato en cada compra dentro del ecosistema." },
+    { n: "05", t: "Bonos inmediatos", d: "Como usuario, recibe bonos inmediatos en cada compra dentro del ecosistema." },
   ];
   return (
     <section id="como-funciona" className="px-6 py-24">
