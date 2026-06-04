@@ -147,12 +147,12 @@ function PriceTransparency() {
         </h3>
         <p className="mt-3 text-muted-foreground text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
           Todos los precios de Gas LP dentro de TOKEN GAS MX se ajustan a la regulación vigente del mercado,
-          conforme a los lineamientos oficiales de la <strong className="text-foreground">CRE</strong> y la <strong className="text-foreground">SENER</strong>.
+          conforme a los lineamientos oficiales de la <strong className="text-foreground">CNE</strong> y la <strong className="text-foreground">SENER</strong>.
           Sin intermediarios ocultos, sin sobreprecios: pagas lo que marca el litro oficial.
         </p>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
-            <Shield className="h-3.5 w-3.5" /> Regulación CRE
+            <Shield className="h-3.5 w-3.5" /> Regulación CNE
           </span>
           <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
             <CheckCircle2 className="h-3.5 w-3.5" /> Precio por litro oficial
