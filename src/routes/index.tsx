@@ -334,7 +334,8 @@ function HowItWorks() {
     { n: "01", t: "Descarga la app", d: "Disponible para usuarios y gaseros, vinculada a tu wallet Web 3.0." },
     { n: "02", t: "Solicita o atiende", d: "Pide tu carga o recibe solicitudes verificadas en tu zona." },
     { n: "03", t: "Carga registrada en blockchain", d: "Litros, precio y ubicación quedan inmutables. Confianza real." },
-    { n: "04", t: "Desbloquea más rutas y gana", d: "Mientras más abasteces como gasero, más zonas y pedidos exclusivos desbloqueas. Como usuario, recibe bonos y cashback inmediato en cada compra dentro del ecosistema." },
+    { n: "04", t: "Desbloquea más rutas y gana", d: "Mientras más abasteces como gasero, más zonas y pedidos exclusivos desbloqueas." },
+    { n: "05", t: "Bonos y cashback", d: "Como usuario, recibe bonos y cashback inmediato en cada compra dentro del ecosistema." },
   ];
   return (
     <section id="como-funciona" className="px-6 py-24">
@@ -343,7 +344,7 @@ function HowItWorks() {
           <div className="text-sm font-semibold text-primary uppercase tracking-widest">Cómo funciona</div>
           <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold">Del cilindro al <span className="text-gradient-flame">blockchain</span></h2>
         </div>
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
           {steps.map((s) => (
             <div key={s.n} className="glass-card rounded-2xl p-6 relative">
               <div className="font-display text-5xl font-bold text-gradient-flame opacity-80">{s.n}</div>
