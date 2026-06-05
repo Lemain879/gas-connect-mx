@@ -50,7 +50,11 @@ function Nav() {
           <span className="relative inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-accent glow-flame">
             <Flame className="h-4 w-4 text-primary-foreground" />
           </span>
-          <span>TOKEN GAS <span className="text-gradient-flame">MX</span></span>
+          <span>
+            <span className="text-mexico-green">TOKEN</span>{" "}
+            <span className="text-mexico-white">GAS</span>{" "}
+            <span className="text-mexico-red">MX</span>
+          </span>
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
           <a href="#beneficios" className="hover:text-foreground transition">Beneficios</a>
@@ -390,7 +394,7 @@ function Footer() {
       <div className="mx-auto max-w-7xl flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
         <div className="flex items-center gap-2">
           <Flame className="h-4 w-4 text-primary" />
-          <span>© {new Date().getFullYear()} TOKEN GAS MX. Ecosistema Web 3.0.</span>
+          <span>© {new Date().getFullYear()} <span className="text-mexico-green">TOKEN</span>{" "}<span className="text-mexico-white">GAS</span>{" "}<span className="text-mexico-red">MX</span>. Ecosistema Web 3.0.</span>
         </div>
         <div className="flex gap-6">
           <a href="#" className="hover:text-foreground">Whitepaper</a>
