@@ -13,16 +13,7 @@ Qué estará listo el 27 de noviembre
 - Conexión de una billetera compatible para firmar las transacciones desde el navegador.
 
 
-
-## Build with Lovable 
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/492c62d4-7545-4c43-be37-7c60f6a2145c).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development Qué estará listo el 27 de noviembre
+# Qué estará listo el 27 de noviembre
 
 - Página publicitaria que presenta los beneficios 
 - Registro para dueños de pipas y cilindros de gas que quieran unirse a la comunidad, enlazados a una base de datos
