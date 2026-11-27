@@ -2,7 +2,7 @@
 @source "../src";
 @import "tw-animate-css";
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap");
 
 @custom-variant dark (&:is(.dark *));
 
@@ -34,7 +34,7 @@
   --color-flame-glow: var(--flame-glow);
   --font-display: "Space Grotesk", sans-serif;
   --font-body: "Inter", sans-serif;
-  --color-mexico-green: oklch(0.55 0.20 150);
+  --color-mexico-green: oklch(0.55 0.2 150);
   --color-mexico-white: oklch(0.98 0.01 90);
   --color-mexico-red: oklch(0.58 0.24 25);
 }
@@ -68,29 +68,51 @@
   --flame: oklch(0.82 0.16 80);
   --flame-glow: oklch(0.68 0.22 40);
 
-  --gradient-flame: linear-gradient(135deg, var(--flame) 0%, oklch(0.75 0.20 55) 50%, var(--flame-glow) 100%);
-  --gradient-metal: linear-gradient(135deg, oklch(0.88 0.12 92) 0%, oklch(0.72 0.16 70) 45%, oklch(0.62 0.18 45) 100%);
-  --gradient-hero: radial-gradient(ellipse at top, oklch(0.30 0.14 150 / 0.55), transparent 60%);
+  --gradient-flame: linear-gradient(
+    135deg,
+    var(--flame) 0%,
+    oklch(0.75 0.2 55) 50%,
+    var(--flame-glow) 100%
+  );
+  --gradient-metal: linear-gradient(
+    135deg,
+    oklch(0.88 0.12 92) 0%,
+    oklch(0.72 0.16 70) 45%,
+    oklch(0.62 0.18 45) 100%
+  );
+  --gradient-hero: radial-gradient(ellipse at top, oklch(0.3 0.14 150 / 0.55), transparent 60%);
   --shadow-glow: 0 0 60px -10px oklch(0.82 0.18 70 / 0.55);
   --shadow-card: 0 20px 60px -20px oklch(0.05 0.02 155 / 0.85);
 }
 
-.dark { color-scheme: dark; }
+.dark {
+  color-scheme: dark;
+}
 
 @layer base {
-  * { border-color: var(--color-border); }
-  html { scroll-behavior: smooth; }
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-body);
     background-image:
-      radial-gradient(ellipse 80% 50% at 50% -20%, oklch(0.45 0.18 80 / 0.30), transparent),
+      radial-gradient(ellipse 80% 50% at 50% -20%, oklch(0.45 0.18 80 / 0.3), transparent),
       radial-gradient(ellipse 60% 40% at 80% 100%, oklch(0.35 0.18 150 / 0.25), transparent),
-      radial-gradient(ellipse 50% 35% at 10% 60%, oklch(0.40 0.20 30 / 0.18), transparent);
+      radial-gradient(ellipse 50% 35% at 10% 60%, oklch(0.4 0.2 30 / 0.18), transparent);
     background-attachment: fixed;
   }
-  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
 }
 
 @utility text-gradient-flame {
@@ -104,7 +126,9 @@
   background: linear-gradient(180deg, oklch(0.22 0.05 150 / 0.55), oklch(0.15 0.03 155 / 0.45));
   backdrop-filter: blur(20px);
   border: 1px solid oklch(0.55 0.14 85 / 0.28);
-  box-shadow: var(--shadow-card), inset 0 1px 0 oklch(0.85 0.12 85 / 0.08);
+  box-shadow:
+    var(--shadow-card),
+    inset 0 1px 0 oklch(0.85 0.12 85 / 0.08);
 }
 
 @utility glow-flame {
@@ -112,13 +136,30 @@
 }
 
 @keyframes flicker {
-  0%, 100% { opacity: 1; filter: brightness(1); }
-  50% { opacity: 0.85; filter: brightness(1.2); }
+  0%,
+  100% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 0.85;
+    filter: brightness(1.2);
+  }
 }
-@utility animate-flicker { animation: flicker 3s ease-in-out infinite; }
+@utility animate-flicker {
+  animation: flicker 3s ease-in-out infinite;
+}
 
 @keyframes float-up {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-@utility animate-float-up { animation: float-up 0.8s ease-out both; }
+@utility animate-float-up {
+  animation: float-up 0.8s ease-out both;
+}
