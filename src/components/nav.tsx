@@ -13,7 +13,7 @@ export function Nav() {
           <img
             src="/src/assets/token-gas-logo.png"
             alt="TokenGas MX logo"
-            className="absolute left-0 right-0 mx-auto max-w-[80px] w-auto opacity-[0.08] sm:opacity-[0.15] [filter:blur(6px)] [transform:scale(1.15)]"
+            className="absolute left-0 right-0 mx-auto max-w-[60px] w-auto opacity-[0.04] [filter:blur(4px)] [transform:scale(1.15)]"
           />
           <a href="#" className="relative flex items-center">
             <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-mexico-green to-mexico-red">
