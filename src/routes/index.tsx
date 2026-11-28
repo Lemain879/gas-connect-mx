@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import {
-  Flame,
+  Wallet,
   Shield,
   Zap,
   Gauge,
@@ -13,7 +13,11 @@ import {
   CheckCircle2,
   Sparkles,
   Scale,
-  Wallet,
+  Wallet as WalletIcon,
+  Store,
+  Hotel,
+  GraduationCap,
+  Sparkles as SparklesIcon,
   FileCheck,
   Landmark,
   Eye,
@@ -23,6 +27,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { Toaster } from "@/components/ui/sonner";
+import { GasTransaction } from "@/components/gas-transaction";
+import { Nav } from "@/components/nav";
 import heroImg from "@/assets/hero-token.jpg";
 import gaseroImg from "@/assets/gasero.jpg";
 
@@ -60,49 +66,143 @@ function Index() {
       <Benefits />
       <GaseroSection />
       <TokenSection />
+      <WalletSection />
       <HowItWorks />
+      <GasTransaction />
       <CTA />
       <Footer />
     </div>
   );
 }
 
-function Nav() {
+const appUrl = "https://tokengasmx.app";
+
+function WalletSection() {
+  const [connected, setConnected] = useState(false);
+  const [wallet, setWallet] = useState("");
+  const [sending, setSending] = useState(false);
+
+  const connect = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!wallet.trim()) {
+      toast.error("Escribe la dirección de tu wallet");
+      return;
+    }
+    setSending(true);
+    setTimeout(() => {
+      setSending(false);
+      setConnected(true);
+      toast.success("Wallet conectado correctamente a la red Stellar");
+    }, 800);
+  };
+
+  const disconnect = () => {
+    setConnected(false);
+    setWallet("");
+    toast.info("Wallet desconectado");
+  };
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-background/60 border-b border-border/40">
-      <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2 font-display font-bold text-lg">
-          <span className="relative inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-accent glow-flame">
-            <Flame className="h-4 w-4 text-primary-foreground" />
-          </span>
-          <span>
-            <span className="text-mexico-green">TOKEN</span>{" "}
-            <span className="text-mexico-white">GAS</span>{" "}
-            <span className="text-mexico-red">MX</span>
-          </span>
-        </a>
-        <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-          <a href="#beneficios" className="hover:text-foreground transition">
-            Beneficios
-          </a>
-          <a href="#gaseros" className="hover:text-foreground transition">
-            Gaseros
-          </a>
-          <a href="#como-funciona" className="hover:text-foreground transition">
-            Cómo funciona
-          </a>
-        </nav>
-        <a href={APP_URL} target="_blank" rel="noopener noreferrer">
-          <Button
-            variant="default"
-            size="sm"
-            className="bg-gradient-to-r from-primary to-accent text-primary-foreground font-semibold hover:opacity-90"
-          >
-            <Download className="mr-1.5 h-4 w-4" /> Descargar App
-          </Button>
-        </a>
+    <section id="wallet" className="px-6 py-24">
+      <div className="mx-auto max-w-5xl">
+        <div className="text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-xs font-medium text-accent backdrop-blur">
+            <SparklesIcon className="h-3.5 w-3.5" />
+            Red Stellar
+          </div>
+          <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold">
+            Compatible con <span className="text-gradient-flame">Stellar</span>
+          </h2>
+          <p className="mt-4 text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto">
+            TOKEN GAS MX corre sobre la red <strong className="text-foreground">Stellar</strong>.
+            Todo, desde la wallet hasta el contrato que gestiona las transacciones, usa
+            <strong className="text-foreground">protocolos de Stellar:</strong> como la red de pagos{" "}
+            <code className="rounded bg-muted px-1.5 py-0.5 text-sm font-mono">PST</code> para que
+            el token viaje a la velocidad de la luz, y{" "}
+            <code className="rounded bg-muted px-1.5 py-0.5 text-sm font-mono">SEP-31</code> para la
+            liquidación de carga.
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {[
+            {
+              icon: WalletIcon,
+              title: "Wallet compatible",
+              desc: "Conecta MetaMask, XLM Wallet o cualquier wallet de red Stellar. La clave privada nunca sale de tu dispositivo.",
+              color: "from-primary/20 to-accent/20",
+            },
+            {
+              icon: Banknote,
+              title: "Pagos en Stellar",
+              desc: "Transferencias de TOKEN GAS MX y tokens anclados (USDC, XLM) en segundos, con confirmación en 3-5 segundos.",
+              color: "from-sky-500/20 to-blue-500/20",
+            },
+            {
+              icon: Shield,
+              title: "Seguridad en Soroban",
+              desc: "El contrato que gestiona cada carga es inmutable, verificable y auditable en tiempo real directamente en Stellar.",
+              color: "from-emerald-500/20 to-teal-500/20",
+            },
+            {
+              icon: Zap,
+              title: "Bajo costo",
+              desc: "Comisiones de red en fraction de centavo. Mientras más volumen, menor el costo unitario por carga.",
+              color: "from-amber-500/20 to-orange-500/20",
+            },
+          ].map(({ icon: Icon, title, desc, color }) => (
+            <div
+              key={title}
+              className={`glass-card rounded-2xl p-6 border border-border/40 bg-gradient-to-br ${color}`}
+            >
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 border border-primary/30">
+                <Icon className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="mt-5 font-display text-xl font-semibold">{title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-10 glass-card rounded-2xl p-6 md:p-8">
+          <h3 className="font-display text-2xl font-bold">
+            <span className="text-gradient-flame">Conecta tu wallet</span>
+          </h3>
+          <p className="mt-2 text-muted-foreground">
+            La conexión es segura y directa a la red Stellar. No necesitas intermediarios: tu wallet
+            firma la operación y el contrato de Solana lo ejecuta.
+          </p>
+          <form onSubmit={connect} className="mt-6 grid sm:grid-cols-2 gap-4">
+            <div className="sm:col-span-2">
+              <Label htmlFor="wallet">Dirección de wallet (XLM/SOR)</Label>
+              <Input
+                id="wallet"
+                value={wallet}
+                onChange={(e) => setWallet(e.target.value)}
+                placeholder="GC... o GB... o Soroban address"
+                className="mt-1.5"
+                disabled={connected}
+              />
+            </div>
+            <Button
+              type="submit"
+              disabled={!wallet.trim() || sending || connected}
+              className="w-full sm:w-auto"
+            >
+              {connected ? "Conectado ✓" : sending ? "Conectando..." : "Conectar wallet"}
+            </Button>
+          </form>
+          {connected && (
+            <button
+              onClick={disconnect}
+              className="mt-4 text-sm text-primary underline-offset-2 hover:text-primary/80"
+            >
+              Desconectar wallet
+            </button>
+          )}
+        </div>
       </div>
-    </header>
+    </section>
   );
 }
 
@@ -487,28 +587,28 @@ function HowItWorks() {
   const steps = [
     {
       n: "01",
-      t: "Descarga la app",
-      d: "Disponible para usuarios y gaseros, vinculada a tu wallet Web 3.0.",
+      t: "Nadie expulsa a nadie del plan",
+      d: "El gas libre de intermediarios llega a ti sin costo extra: la compra es directa, inequívoca y a un precio que marca la red y no un intermediario.",
     },
     {
       n: "02",
-      t: "Solicita o atiende",
-      d: "Pide tu carga o recibe solicitudes verificadas en tu zona.",
+      t: "Tu gasto está en cadena",
+      d: "Cada litro que combustes queda verificable y trazable. Sabes exactamente a quién pagas, cuánto y cuándo, sin comisiones ocultas.",
     },
     {
       n: "03",
-      t: "Carga registrada en blockchain",
-      d: "Litros, precio y ubicación quedan inmutables. Confianza real.",
+      t: "Desde Hoteles y Restaurantes",
+      d: "Todo lo que consumes es registrado con transparencia total. Los establecimientos verificados y sus clientes disfrutan del mismo precio que marca el mercado.",
     },
     {
       n: "04",
-      t: "Desbloquea más rutas y gana",
-      d: "Mientras más abasteces como gasero, más zonas y pedidos exclusivos desbloqueas.",
+      t: "Escuelas y comunidades inclusivas",
+      d: "Aprendices, personal docente, familias y colectivos sociales acceden al mismo servicio: gas en precio justo y medición certificada.",
     },
     {
       n: "05",
-      t: "Bonos inmediatos",
-      d: "Como usuario, recibe bonos inmediatos en cada compra dentro del ecosistema.",
+      t: "Smart contract que gestiona cada pago",
+      d: "La cantidad se deposita en un contrato Soroban en Stellar, se verifica la entrega y, al confirmarse, se libera al gastador. Sin intermediarios, sin fugas.",
     },
   ];
   return (
@@ -519,17 +619,32 @@ function HowItWorks() {
             Cómo funciona
           </div>
           <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold">
-            Del cilindro al <span className="text-gradient-flame">blockchain</span>
+            Del cilindro al <span className="text-gradient-flame">smart contract</span>
           </h2>
+          <p className="mt-4 text-muted-foreground text-lg leading-relaxed">
+            De la compra del gas al bloque de Stellar: cinco pasos, todos verificables, sin
+            intermediarios y con tu dinero en tu control.
+          </p>
         </div>
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
-          {steps.map((s) => (
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+          {steps.map((s, i) => (
             <div key={s.n} className="glass-card rounded-2xl p-6 relative">
               <div className="font-display text-5xl font-bold text-gradient-flame opacity-80">
                 {s.n}
               </div>
               <h3 className="mt-4 font-display text-lg font-semibold">{s.t}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{s.d}</p>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.d}</p>
+              {i === 4 && (
+                <div className="mt-4 rounded-xl bg-primary/5 p-4 border border-primary/20">
+                  <div className="flex items-center gap-2 text-xs font-medium text-primary">
+                    <Zap className="h-3.5 w-3.5" />
+                    Smart contract Soroban en Stellar
+                  </div>
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    El contrato valida cada pago y cada entrega. Sin control de una sola entidad.
+                  </p>
+                </div>
+              )}
             </div>
           ))}
         </div>
