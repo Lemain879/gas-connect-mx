@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { type ElementType } from "react";
-import { Wallet, Banknote, ShieldCheck, CheckCircle2, Send, Zap, Loader2 } from "lucide-react";
+import { CheckCircle2, ShieldCheck, Banknote, Send, Zap, Loader2 } from "lucide-react";
 
 interface FlowStep {
   id: number;

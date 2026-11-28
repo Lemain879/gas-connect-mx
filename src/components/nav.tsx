@@ -1,5 +1,5 @@
 import { type ReactNode } from "react";
-import { ArrowRight, CheckCircle2, Download, Flame, MapPin, Shield, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle2, Download, Flame } from "lucide-react";
 import { GasTransaction } from "./gas-transaction";
 
 const APP_URL = "https://tokengasmx.app";
