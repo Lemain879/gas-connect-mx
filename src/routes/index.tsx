@@ -249,11 +249,6 @@ function Benefits() {
       title: "Geolocalización",
       desc: "Encuentra al gasero más cercano con rutas en tiempo real.",
     },
-    {
-      icon: Wallet,
-      title: "Bonos en USDC con Kompensa",
-      desc: "Por cada carga, TOKEN GAS MX te entrega bonos en USDC que puedes gastar en los negocios registrados dentro de la App Kompensa.",
-    },
   ];
   return (
     <section id="beneficios" className="px-6 py-24">
